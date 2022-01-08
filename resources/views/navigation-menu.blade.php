@@ -34,6 +34,11 @@
                                         {{ __('Customize Intro Slider') }}
                                     </x-jet-dropdown-link>
                                 </div>
+                                <div class="w-60">
+                                    <x-jet-dropdown-link href="{{route('intro_slider')}}">
+                                        {{ __('Blog') }}
+                                    </x-jet-dropdown-link>
+                                </div>
                             </x-slot>
                         </x-jet-dropdown>
                     </div>
@@ -129,8 +134,6 @@
                         </x-jet-dropdown>
                     </div>
                 </div>
-
-
             </div>
 
 

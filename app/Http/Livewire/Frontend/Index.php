@@ -8,11 +8,12 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public  $categories;
 
 
+    public function mount(): void
+    {
 
-
+    }
 
 
 
