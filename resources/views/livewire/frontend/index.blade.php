@@ -418,7 +418,7 @@
 
 <!-- Products Area Start -->
 
-    <livewire:frontend.component.product-view/>
+   <livewire:frontend.section.product-view/>
 <!-- Products Area End -->
 
 <!-- Banner Area Start -->

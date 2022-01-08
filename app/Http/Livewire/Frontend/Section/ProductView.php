@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Frontend\Component;
+namespace App\Http\Livewire\Frontend\Section;
 
 use App\Models\Category;
 use App\Models\Products;
@@ -13,6 +13,7 @@ class ProductView extends Component
     public $products ;
     public $in = 'all';
     public $isActive = "all";
+    public $categories;
 
 
 
@@ -42,6 +43,6 @@ class ProductView extends Component
     }
     public function render()
     {
-        return view('livewire.frontend.component.product-view');
+        return view('livewire.frontend.section.product-view');
     }
 }

@@ -116,16 +116,7 @@ class ProductData extends Component
 
             ]
         );
-
-
-
-
-
-
-
-
-
-        $lastId = $k->id;
+            $lastId = $k->id;
         if ($this->product_thumbnail && $lastId) {
             foreach ($this->product_thumbnail as $thumbnail) {
                 $thumbnail_path = $thumbnail->store(auth()->user()->name . '/product_thumbnail', 'public');
