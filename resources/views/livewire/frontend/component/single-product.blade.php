@@ -253,4 +253,12 @@
     </div>
 </div>
 
-
+@push('frontend_script')
+    <script>
+        window.addEventListener('test', function(e){
+           for (let i of e.detail.arr){
+               console.log(i)
+           }
+        })
+    </script>
+@endpush

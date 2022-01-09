@@ -26,6 +26,7 @@ class ProductView extends Component
     {
         $this->products = Products::all();
         $this->isActive = 'all';
+        $this->emit('test');
     }
 
     public function new_product(): void
