@@ -461,7 +461,7 @@
 <!-- Banner Area End -->
 <!-- Products Area Start -->
 
-    <livewire:frontend.component.single-product/>
+    <livewire:frontend.section.newarrival/>
 
 
 <!-- Products Area End -->
