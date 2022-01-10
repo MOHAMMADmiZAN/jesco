@@ -116,9 +116,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <p class="copy-text"> © 2021 <strong>Jesco</strong> Made With <i class="fa fa-heart"
-                                                                                         aria-hidden="true"></i> By <a class="company-name" href="https://hasthemes.com/">
-                                <strong> HasThemes</strong></a>.</p>
+                        <p class="copy-text"> © {{now()->year}} <strong>Jesco</strong> Develop With <i class="fa fa-heart"
+                                                                                         aria-hidden="true"></i> By <a class="company-name" href="#">
+                                <strong> Mohammad Mizanur Rahman</strong></a>.</p>
                     </div>
                 </div>
             </div>
@@ -342,6 +342,7 @@
 <!-- Main Js -->
 <script src="{{asset('assets/frontend')}}/js/main.js"></script>
 <script src="{{mix('js/app.js')}}" defer></script>
+@stack('script')
 @livewireScripts
 
 </body>

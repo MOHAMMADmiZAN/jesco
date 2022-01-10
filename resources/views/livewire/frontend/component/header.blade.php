@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-auto align-self-center">
                     <div class="header-logo">
-                        <a href="index.html"><img src="{{asset('assets/frontend')}}/images/logo/logo.png" alt="Site Logo" /></a>
+                        <a href="{{route('home')}}"><img src="{{asset('assets/frontend')}}/images/logo/logo.png" alt="Site Logo" /></a>
                     </div>
                 </div>
                 <div class="col align-self-center d-none d-lg-block">
@@ -58,7 +58,7 @@
                         <ul>
                             <li class="dropdown"><a href="#">Home <i class="pe-7s-angle-down"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="{{route('home')}}">Home</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown position-static"><a href="#">Shop <i
