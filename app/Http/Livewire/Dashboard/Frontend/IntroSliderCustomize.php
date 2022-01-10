@@ -51,10 +51,14 @@ class IntroSliderCustomize extends Component
         );
         $file_path = $this->slide['photo']->store('/intro_slide','public');
 
-        $this->intro_slide->sale = $this->slide['sale'];
-        $this->intro_slide->title = $this->slide['title'];
-        $this->intro_slide->slide_image = $file_path;
-        $success= $this->intro_slide->save();
+        $success= intro_slide::create([
+            'sale'=> $this->slide['sale'],
+            'title'=> $this->slide['title'],
+            'slide_image'=> $file_path,
+        ]);
+
+
+
         if ($success){
              session()->flash('alert', 'slide add Successfully');
 

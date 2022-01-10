@@ -5,10 +5,8 @@
         </h2>
     </x-slot>
     <div class="alert alert-success">
-        <h1 wire:poll.1000ms>{{now()->format('g:i:s:a')}}</h1>
-        <div wire:offline>
-            <h1>offline</h1>
-        </div>
+        <h1 wire:poll.100ms>{{now()->format('g:i:s:a')}}</h1>
+
     </div>
 
 </x-app-layout>
