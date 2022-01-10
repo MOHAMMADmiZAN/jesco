@@ -25,7 +25,7 @@
                                                     </span>
                                                     <span class="rating-num">( 5 Review )</span>
                                                 </span>
-        <h5 class="title"><a href="single-product.html">{{$product->name}}
+        <h5 class="title" style="cursor: pointer;"><a wire:click="viewSingleProduct">{{$product->name}}
             </a>
         </h5>
         <span class="price">

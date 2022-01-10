@@ -1,56 +1,53 @@
 <!-- Product Details Area Start -->
 <div class="product-details-area pt-100px pb-100px">
     <div class="container">
+
         <div class="row">
             <div class="col-lg-6 col-sm-12 col-xs-12 mb-lm-30px mb-md-30px mb-sm-30px">
                 <!-- Swiper -->
                 <div class="swiper-container zoom-top">
+
                     <div class="swiper-wrapper">
+                        @if($productThumbnail->count()>0)
+                            @foreach($productThumbnail as $pt)
                         <div class="swiper-slide zoom-image-hover">
-                            <img class="img-responsive m-auto" src="assets/images/product-image/zoom-image/1.jpg"
+                            <img class="img-responsive m-auto" src="{{asset('storage/'.$pt->product_thumbnail_url)}}"
                                  alt="">
                         </div>
-                        <div class="swiper-slide zoom-image-hover">
-                            <img class="img-responsive m-auto" src="assets/images/product-image/zoom-image/2.jpg"
-                                 alt="">
-                        </div>
-                        <div class="swiper-slide zoom-image-hover">
-                            <img class="img-responsive m-auto" src="assets/images/product-image/zoom-image/3.jpg"
-                                 alt="">
-                        </div>
-                        <div class="swiper-slide zoom-image-hover">
-                            <img class="img-responsive m-auto" src="assets/images/product-image/zoom-image/4.jpg"
-                                 alt="">
-                        </div>
+                            @endforeach
+                            @else
+                            <div class="swiper-slide zoom-image-hover">
+                                <img class="img-responsive m-auto" src="{{asset('storage/'.$productData->image_url)}}"
+                                     alt="">
+                            </div>
+                        @endif
                     </div>
+
                 </div>
                 <div class="swiper-container zoom-thumbs mt-3 mb-3">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img class="img-responsive m-auto" src="assets/images/product-image/small-image/1.jpg"
-                                 alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="img-responsive m-auto" src="assets/images/product-image/small-image/2.jpg"
-                                 alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="img-responsive m-auto" src="assets/images/product-image/small-image/3.jpg"
-                                 alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="img-responsive m-auto" src="assets/images/product-image/small-image/4.jpg"
-                                 alt="">
-                        </div>
+                        @if($productThumbnail->count()>0)
+                            @foreach($productThumbnail as $pt)
+                                <div class="swiper-slide">
+                                    <img class="img-responsive m-auto" src="{{asset('storage/'.$pt->product_thumbnail_url)}}"
+                                         alt="">
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="swiper-slide">
+                                <img class="img-responsive m-auto" src="{{asset('storage/'.$productData->image_url)}}"
+                                     alt="">
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="product-details-content quickview-content">
-                    <h2>Ardene Microfiber Tights</h2>
+                    <h2>{{$productData->name}}</h2>
                     <div class="pricing-meta">
                         <ul>
-                            <li class="old-price not-cut">$18.90</li>
+                            <li class="old-price not-cut">${{$productData->unit_price}}</li>
                         </ul>
                     </div>
                     <div class="pro-details-rating-wrap">
@@ -93,11 +90,9 @@
                         <span>Categories: </span>
                         <ul class="d-flex">
                             <li>
-                                <a href="#">Fashion.</a>
+                                <a href="#">{{$productData->category->categoryName}}</a>
                             </li>
-                            <li>
-                                <a href="#">eCommerce</a>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="pro-details-social-info pro-details-same-style d-flex">
@@ -139,29 +134,14 @@
             <div class="tab-content description-review-bottom">
                 <div id="des-details2" class="tab-pane">
                     <div class="product-anotherinfo-wrapper text-start">
-                        <ul>
-                            <li><span>Weight</span> 400 g</li>
-                            <li><span>Dimensions</span>10 x 10 x 15 cm</li>
-                            <li><span>Materials</span> 60% cotton, 40% polyester</li>
-                            <li><span>Other Info</span> American heirloom jean shorts pug seitan letterpress</li>
-                        </ul>
+                        {{$productData->information}}
                     </div>
                 </div>
                 <div id="des-details1" class="tab-pane active">
                     <div class="product-description-wrapper">
                         <p>
 
-                            Lorem ipsum dolor sit amet, consectetur adipisi elit, incididunt ut labore et. Ut enim
-                            ad minim veniam, quis nostrud exercita ullamco laboris nisi ut aliquip ex ea commol
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                            qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste
-                            natus error sit voluptatem accusantiulo doloremque laudantium, totam rem aperiam, eaque
-                            ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                            explicabo. Nemo enim ipsam voluptat quia voluptas sit aspernatur aut odit aut fugit, sed
-                            quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                            quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                            quia non numquam eius modi tempora incidunt ut labore
+                            {{$productData->description}}
 
                         </p>
                     </div>
@@ -172,7 +152,7 @@
                             <div class="review-wrapper">
                                 <div class="single-review">
                                     <div class="review-img">
-                                        <img src="assets/images/review-image/1.png" alt="" />
+                                        <img src="{{asset('assets/frontend')}}/images/review-image/1.png" alt="" />
                                     </div>
                                     <div class="review-content">
                                         <div class="review-top-wrap">
@@ -203,7 +183,7 @@
                                 </div>
                                 <div class="single-review child-review">
                                     <div class="review-img">
-                                        <img src="assets/images/review-image/2.png" alt="" />
+                                        <img src="{{asset('assets/frontend')}}/images/review-image/2.png" alt="" />
                                     </div>
                                     <div class="review-content">
                                         <div class="review-top-wrap">
@@ -295,7 +275,7 @@
                     <div class="product">
                         <div class="thumb">
                             <a href="single-product.html" class="image">
-                                <img src="assets/images/product-image/8.jpg" alt="Product" />
+                                <img src="{{asset('assets/frontend')}}/images/product-image/8.jpg" alt="Product" />
                             </a>
                             <span class="badges">
                                     <span class="new">New</span>
@@ -334,7 +314,7 @@
                     <div class="product">
                         <div class="thumb">
                             <a href="single-product.html" class="image">
-                                <img src="assets/images/product-image/9.jpg" alt="Product" />
+                                <img src="{{asset('assets/frontend')}}/images/product-image/9.jpg" alt="Product" />
                             </a>
                             <span class="badges">
                                     <span class="sale">-10%</span>
@@ -375,7 +355,7 @@
                     <div class="product">
                         <div class="thumb">
                             <a href="single-product.html" class="image">
-                                <img src="assets/images/product-image/10.jpg" alt="Product" />
+                                <img src="{{asset('assets/frontend')}}/images/product-image/10.jpg" alt="Product" />
                             </a>
                             <span class="badges">
                                     <span class="sale">-7%</span>
@@ -414,7 +394,7 @@
                     <div class="product">
                         <div class="thumb">
                             <a href="single-product.html" class="image">
-                                <img src="assets/images/product-image/11.jpg" alt="Product" />
+                                <img src="{{asset('assets/frontend')}}/images/product-image/11.jpg" alt="Product" />
                             </a>
                             <span class="badges">
                                     <span class="new">Sale</span>
@@ -453,7 +433,7 @@
                     <div class="product">
                         <div class="thumb">
                             <a href="single-product.html" class="image">
-                                <img src="assets/images/product-image/3.jpg" alt="Product" />
+                                <img src="{{asset('assets/frontend')}}/images/product-image/3.jpg" alt="Product" />
                             </a>
                             <span class="badges">
                                     <span class="sale">-10%</span>
@@ -494,7 +474,7 @@
                     <div class="product">
                         <div class="thumb">
                             <a href="single-product.html" class="image">
-                                <img src="assets/images/product-image/1.jpg" alt="Product" />
+                                <img src="{{asset('assets/frontend')}}/images/product-image/1.jpg" alt="Product" />
                             </a>
                             <span class="badges">
                                     <span class="new">New</span>

@@ -1,5 +1,4 @@
 <livewire:frontend.component.header/>
-
 <livewire:frontend.pages.home.section.intro-slider/>
 
 <!-- Feature Area Srart -->
