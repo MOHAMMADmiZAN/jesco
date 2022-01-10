@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Frontend;
+namespace App\Http\Livewire\Frontend\Pages;
 
 use App\Models\Category;
 use App\Models\Products;
@@ -19,6 +19,6 @@ class Index extends Component
 
     public function render()
     {
-        return view('livewire.frontend.index');
+        return view('livewire.frontend.pages.index');
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire\Frontend\Section;
+namespace App\Http\Livewire\Frontend\Pages\Home\Section;
 
 use App\Models\Category;
 use App\Models\Products;
 use Livewire\Component;
-use phpDocumentor\Reflection\Types\Mixed_;
+use function view;
 
 
 class ProductView extends Component
@@ -26,7 +26,6 @@ class ProductView extends Component
     {
         $this->products = Products::all();
         $this->isActive = 'all';
-        $this->emit('test');
     }
 
     public function new_product(): void
@@ -45,6 +44,6 @@ class ProductView extends Component
     }
     public function render()
     {
-        return view('livewire.frontend.section.product-view');
+        return view('livewire.frontend.pages.home.section.product-view');
     }
 }

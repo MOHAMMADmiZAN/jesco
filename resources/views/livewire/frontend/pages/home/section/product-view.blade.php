@@ -40,7 +40,6 @@
                             @foreach($products->take(8) as $product)
                                 <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
                                      data-aos-delay="200" wire:key="{{Str::random(34)}}">
-
                                     <livewire:frontend.component.single-product :product="$product" wire:key="{{Str::random(124)}}"/>
                                 </div>
                             @endforeach

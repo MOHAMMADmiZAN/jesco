@@ -1,4 +1,4 @@
 
-<livewire:frontend.index/>
+<livewire:frontend.pages.index/>
 
 
