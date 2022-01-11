@@ -7,7 +7,8 @@
                     <div class="col-md-6 col-lg-3 mb-md-30px mb-lm-30px">
                         <div class="single-wedge">
                             <div class="footer-logo">
-                                <a href="index.html"><img src="{{asset('assets/frontend')}}/images/logo/logo-white.png" alt=""></a>
+                                <a href="index.html"><img src="{{asset('assets/frontend')}}/images/logo/logo-white.png"
+                                                          alt=""></a>
                             </div>
                             <p class="about-text">Lorem ipsum dolor sit amet consectet adipisicing elit, sed do
                                 eiusmod templ incididunt ut labore et dolore magnaol aliqua Ut enim ad minim.
@@ -81,7 +82,8 @@
                                     <ul class="align-items-center">
                                         <li class="li"><a class="single-link" href="index.html">Jesco</a>
                                         </li>
-                                        <li class="li"><a class="single-link" href="shop-left-sidebar.html">Shop</a></li>
+                                        <li class="li"><a class="single-link" href="shop-left-sidebar.html">Shop</a>
+                                        </li>
                                         <li class="li"><a class="single-link" href="contact.html">Contact us</a></li>
                                         <li class="li"><a class="single-link" href="login.html">Log in</a></li>
                                         <li class="li"><a class="single-link" href="#">Help</a></li>
@@ -102,7 +104,8 @@
                                     896, Address 10010, HGJ</p>
                                 <p class="phone">Phone/Fax:<a href="tel:0123456789">0123456789</a></p>
                                 <p class="mail">Email:<a href="mailto:demo@example.com">demo@example.com</a></p>
-                                <img src="{{asset('assets/frontend')}}/images/icons/payment.png" alt="" class="payment-img img-fulid">
+                                <img src="{{asset('assets/frontend')}}/images/icons/payment.png" alt=""
+                                     class="payment-img img-fulid">
 
                                 <!-- News letter area  End -->
                             </div>
@@ -116,8 +119,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <p class="copy-text"> © {{now()->year}} <strong>Jesco</strong> Develop With <i class="fa fa-heart"
-                                                                                         aria-hidden="true"></i> By <a class="company-name" href="#">
+                        <p class="copy-text"> © {{now()->year}} <strong>Jesco</strong> Develop With <i
+                                class="fa fa-heart"
+                                aria-hidden="true"></i> By <a class="company-name" href="#">
                                 <strong> Mohammad Mizanur Rahman</strong></a>.</p>
                     </div>
                 </div>
@@ -135,7 +139,6 @@
 <livewire:frontend.component.login/>
 <!-- Login Modal End -->
 <!-- Modal -->
-<livewire:frontend.component.product-modal/>
 <!-- Modal end -->
 
 <!-- Global Vendor, plugins JS -->
