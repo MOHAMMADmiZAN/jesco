@@ -13,7 +13,8 @@ class SingleProductView extends Component
     public object $relatedProducts;
 
 
-    public function mount($product){
+    public function mount($product): void
+    {
         $this->productData = Products::findOrFail($product);
         $this->productThumbnail =Product_thumbnail::whereProductId($product)->get();
         $this->relatedProducts = Products::wherecategoryId($this->productData->category_id)->get();

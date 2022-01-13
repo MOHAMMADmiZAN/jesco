@@ -1,10 +1,10 @@
 <div class="product">
     <div class="thumb">
-        <a href="single-product.html" class="image">
+        <a wire:click="viewSingleProduct" class="image" style="cursor: pointer">
             <img src="{{asset('storage/'.$product->image_url)}}" alt="{{$product->name}}" />
         </a>
         <span class="badges">
-                                                    <span class="new">{{\Carbon\Carbon::parse("10 Hours ago")<$product->created_at?'New':$product->created_at->diffForHumans()}}</span>
+                                                    <span class="new">{{\Carbon\Carbon::parse("24 Hours ago")<$product->created_at?'New':$product->created_at->diffForHumans()}}</span>
                                                 </span>
         <div class="actions">
             <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
