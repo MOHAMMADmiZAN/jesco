@@ -35,7 +35,7 @@
                                     </x-jet-dropdown-link>
                                 </div>
                                 <div class="w-60">
-                                    <x-jet-dropdown-link href="{{route('intro_slider')}}">
+                                    <x-jet-dropdown-link href="{{route('blog-list')}}">
                                         {{ __('Blog') }}
                                     </x-jet-dropdown-link>
                                 </div>

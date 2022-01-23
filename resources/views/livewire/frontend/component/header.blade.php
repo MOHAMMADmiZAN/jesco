@@ -118,7 +118,7 @@
                             </li>
                             <li class="dropdown "><a href="#">Blogs <i class="pe-7s-angle-down"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="blog-grid.html">Blog Grid Page</a></li>
+                                    <li><a href="{{route('blog')}}">Blog Grid Page</a></li>
                                     <li><a href="blog-single.html">Blog Single Page</a></li>
                                 </ul>
                             </li>
@@ -333,7 +333,7 @@
                 </li>
                 <li><a href="#"><span class="menu-text">Blog</span></a>
                     <ul class="sub-menu">
-                        <li><a href="blog-grid.html">Blog Grid Page</a></li>
+                        <li><a href="{{route('blog')}}">Blog Grid Page</a></li>
                         <li><a href="blog-grid-left-sidebar.html">Grid Left Sidebar</a></li>
                         <li><a href="blog-grid-right-sidebar.html">Grid Right Sidebar</a></li>
                         <li><a href="blog-single.html">Blog Single Page</a></li>

@@ -79,120 +79,122 @@
                 </div>
             </div>
         </div>
-        @if($isShow)
-            <x-custom.custom-modal title="Add Product">
-                <form wire:submit.prevent="submit">
-                    <div class="form-group my-2">
-                        <input type="text"
-                               class="form-control rounded border-gray-300 @error('productData.name') is-invalid @enderror"
-                               placeholder="Type Product_name" wire:model="productData.name">
-                    </div>
-                    @error('productData.name')
-                    <div class="alert alert-danger">{{$message}}</div>
-                    @enderror
-                    <div class="form-group my-2">
-                        <select class="form-select @error('productData.category') is-invalid @enderror text-gray-500"
-                                wire:model="productData.category" wire:change="subcategory_data">
-                            <option value=>Select Category</option>
-                            @foreach($category as $k=>$ct)
-                                <option value="{{$ct->id}}">{{$ct->categoryName}}</option>
-                            @endforeach
-                        </select>
 
-                    </div>
-                    @error('productData.category')
-                    <div class="alert alert-danger">{{$message}}</div>
-                    @enderror
-                    <div class="form-group my-2">
-                        <select class="form-select @error('productData.subcategory') is-invalid @enderror text-gray-500"
-                                wire:model="productData.subcategory">
-                            <option value=>Select Sub-Category</option>
-                            @foreach($subcategory as $k=>$ct)
-                                <option value="{{$ct->id}}">{{Str::ucfirst($ct->sub_category_name)}}</option>
-                            @endforeach
-                        </select>
-
-                    </div>
-                    @error('productData.subcategory')
-                    <div class="alert alert-danger">{{$message}}</div>
-                    @enderror
-                    <div class="form-group my-2">
-                        <input type="text"
-                               class="form-control rounded border-gray-300 @error('productData.unit_price') is-invalid @enderror"
-                               placeholder=" Type Unit Price" wire:model="productData.unit_price">
-
-                    </div>
-                    @error('productData.unit_price')
-                    <div class="alert alert-danger">{{$message}}</div>
-                    @enderror
-                    <div class="form-group my-2">
-                        <input type="text"
-                               class="form-control rounded border-gray-300 @error('productData.quantity') is-invalid @enderror"
-                               placeholder=" Type Product_Quantity" wire:model="productData.quantity">
-
-                    </div>
-                    @error('productData.quantity')
-                    <div class="alert alert-danger">{{$message}}</div>
-                    @enderror
-                    <div class="form-group my-2">
-                        <textarea  class="form-control rounded border-gray-300" cols="30" rows="5" placeholder=" Type Product Description" wire:model="productData.description"></textarea>
-                    </div>
-                    @error('productData.description')
-                    <div class="alert alert-danger">{{$message}}</div>
-                    @enderror
-                    <div class="form-group my-2">
-                        <textarea  class="form-control rounded border-gray-300" cols="30" rows="5" placeholder=" Type Product Information" wire:model="productData.information"></textarea>
-                    </div>
-                    @error('productData.information')
-                    <div class="alert alert-danger">{{$message}}</div>
-                    @enderror
-                    <h3 class="py-2">Product Image Upload:</h3>
-                    <hr>
-                    <div class="custom-file my-2">
-
-                        <input type="file" class="custom-file-input rounded border-gray-300 "
-                               wire:model="productData.image">
-                    </div>
-                    @if ($productData['image'] )
-                        Photo Preview:
-                        <img src="{{ $productData['image']->temporaryUrl()??''}}"
-                             style="max-width:100px;max-height:100px" class="mb-2">
-                    @endif
-                    <hr>
-                    <h3 class="py-2">Product Thumbnail Upload:</h3>
-                    <hr>
-                    <div class="custom-file my-2">
-
-                        <input type="file" class="custom-file-input rounded border-gray-300 "
-                               wire:model="product_thumbnail" multiple>
-                    </div>
-                    @if($product_thumbnail)
-                        <div class="d-flex flex-wrap">
-                            @foreach($product_thumbnail as $thumbnail)
-                                <img src="{{ $thumbnail->temporaryUrl()??''}}" style="max-width:100px;max-height:100px"
-                                     class="mb-2">
-                            @endforeach
-                        </div>
-                    @endif
-                <!-- Progress Bar -->
-
-                    <div x-show="isUploading">
-
-                        <progress max="100" class=" border-gray-300 rounded-md mb-2 w-50 py-1 mx-auto" :value="progress"
-                                  x-text="progress+'%'"></progress>
-
-                    </div>
-                    @error('productData.image') <div class="alert alert-danger">{{$message}}</div> @enderror
-
-
-                    <hr class="mb-3">
-                    <button class="btn btn-secondary d-block mx-auto">Submit</button>
-                </form>
-
-            </x-custom.custom-modal>
-
-        @endif
     </div>
+    @if($isShow)
+        <x-custom.custom-modal title="Add Product">
+            <form wire:submit.prevent="submit">
+                <div class="form-group my-2">
+                    <input type="text"
+                           class="form-control rounded border-gray-300 @error('productData.name') is-invalid @enderror"
+                           placeholder="Type Product_name" wire:model="productData.name">
+                </div>
+                @error('productData.name')
+                <div class="alert alert-danger">{{$message}}</div>
+                @enderror
+                <div class="form-group my-2">
+                    <select class="form-select @error('productData.category') is-invalid @enderror text-gray-500"
+                            wire:model="productData.category" wire:change="subcategory_data">
+                        <option value=>Select Category</option>
+                        @foreach($category as $k=>$ct)
+                            <option value="{{$ct->id}}">{{$ct->categoryName}}</option>
+                        @endforeach
+                    </select>
+
+                </div>
+                @error('productData.category')
+                <div class="alert alert-danger">{{$message}}</div>
+                @enderror
+                <div class="form-group my-2">
+                    <select class="form-select @error('productData.subcategory') is-invalid @enderror text-gray-500"
+                            wire:model="productData.subcategory">
+                        <option value=>Select Sub-Category</option>
+                        @foreach($subcategory as $k=>$ct)
+                            <option value="{{$ct->id}}">{{Str::ucfirst($ct->sub_category_name)}}</option>
+                        @endforeach
+                    </select>
+
+                </div>
+                @error('productData.subcategory')
+                <div class="alert alert-danger">{{$message}}</div>
+                @enderror
+                <div class="form-group my-2">
+                    <input type="text"
+                           class="form-control rounded border-gray-300 @error('productData.unit_price') is-invalid @enderror"
+                           placeholder=" Type Unit Price" wire:model="productData.unit_price">
+
+                </div>
+                @error('productData.unit_price')
+                <div class="alert alert-danger">{{$message}}</div>
+                @enderror
+                <div class="form-group my-2">
+                    <input type="text"
+                           class="form-control rounded border-gray-300 @error('productData.quantity') is-invalid @enderror"
+                           placeholder=" Type Product_Quantity" wire:model="productData.quantity">
+
+                </div>
+                @error('productData.quantity')
+                <div class="alert alert-danger">{{$message}}</div>
+                @enderror
+                <div class="form-group my-2">
+                    <textarea  class="form-control rounded border-gray-300" cols="30" rows="5" placeholder=" Type Product Description" wire:model="productData.description"></textarea>
+                </div>
+                @error('productData.description')
+                <div class="alert alert-danger">{{$message}}</div>
+                @enderror
+                <div class="form-group my-2">
+                    <textarea  class="form-control rounded border-gray-300" cols="30" rows="5" placeholder=" Type Product Information" wire:model="productData.information"></textarea>
+                </div>
+                @error('productData.information')
+                <div class="alert alert-danger">{{$message}}</div>
+                @enderror
+                <h3 class="py-2">Product Image Upload:</h3>
+                <hr>
+                <div class="custom-file my-2">
+
+                    <input type="file" class="custom-file-input rounded border-gray-300 "
+                           wire:model="productData.image">
+                </div>
+                @if ($productData['image'] )
+                    Photo Preview:
+                    <img src="{{ $productData['image']->temporaryUrl()??''}}"
+                         style="max-width:100px;max-height:100px" class="mb-2">
+                @endif
+                <hr>
+                <h3 class="py-2">Product Thumbnail Upload:</h3>
+                <hr>
+                <div class="custom-file my-2">
+
+                    <input type="file" class="custom-file-input rounded border-gray-300 "
+                           wire:model="product_thumbnail" multiple>
+                </div>
+                @if($product_thumbnail)
+                    <div class="d-flex flex-wrap">
+                        @foreach($product_thumbnail as $thumbnail)
+                            <img src="{{ $thumbnail->temporaryUrl()??''}}" style="max-width:100px;max-height:100px"
+                                 class="mb-2">
+                        @endforeach
+                    </div>
+                @endif
+            <!-- Progress Bar -->
+
+                <div x-show="isUploading">
+
+                    <progress max="100" class=" border-gray-300 rounded-md mb-2 w-50 py-1 mx-auto" :value="progress"
+                              x-text="progress+'%'"></progress>
+
+                </div>
+                @error('productData.image') <div class="alert alert-danger">{{$message}}</div> @enderror
+
+
+                <hr class="mb-3">
+                <button class="btn btn-secondary d-block mx-auto">Submit</button>
+            </form>
+
+        </x-custom.custom-modal>
+    @endif
+
+
 
 
 </div>

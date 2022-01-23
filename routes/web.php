@@ -30,4 +30,5 @@ Route::middleware(['auth:sanctum','verified'])->group(static function () {
 
 require __DIR__.'/frontend.php';
 require __DIR__.'/product.php';
+require __DIR__ . '/blog.php';
 

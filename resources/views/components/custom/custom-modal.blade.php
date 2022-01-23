@@ -1,5 +1,5 @@
 
-<div class="bg-gray-500 bg-opacity-50" style="top: 0;left: 0; position: absolute; width: 100%; height: 100%; overflow-x: hidden">
+<div class="bg-gray-500 bg-opacity-50" style="top: 0;left: 0; position: fixed; width: 100%; height: 100vh; overflow-x: hidden">
     <div class="row">
         <div class="col-lg-6 mx-auto">
             <div class="py-12">

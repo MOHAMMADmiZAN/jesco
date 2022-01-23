@@ -171,4 +171,4 @@
 @livewireScripts
 
 </body>
-</html>
+
