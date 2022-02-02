@@ -7,8 +7,8 @@
     <div class="alert" >
 
         <h1 id="dt">{{now()->format('g:i:s A')}}</h1>
-
     </div>
+
 
     @push('script')
         <script>
@@ -39,6 +39,7 @@
                 dt.style.fontWeight = '500'
 
             })
+
         </script>
     @endpush
 

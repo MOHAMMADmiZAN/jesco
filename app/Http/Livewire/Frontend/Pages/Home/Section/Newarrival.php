@@ -24,10 +24,12 @@ class Newarrival extends Component
 
 
 
-
-
     public function render()
     {
         return view('livewire.frontend.pages.home.section.newarrival',['products'=>$this->products]);
     }
+
+
+
+
 }
